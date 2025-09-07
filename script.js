@@ -69,7 +69,7 @@ function displayCards(data) {
   data.forEach((plant) => {
     const card = document.createElement("div");
     card.className =
-      "bg-white shadow-md p-4 rounded-lg flex flex-col justify-between h-full";
+      "bg-white shadow-md p-4 rounded-lg flex flex-col justify-between h-full w-full sm:w-[280px]";
     card.innerHTML = `
       <div class="h-36 bg-gray-200 rounded-md flex items-center justify-center">
         <img src="${plant.image}" alt="${plant.name}" class="h-full object-cover"/>
@@ -93,7 +93,7 @@ async function openModal(id) {
   try {
     const res = await fetch(`https://openapi.programming-hero.com/api/plant/${id}`);
     const data = await res.json();
-    const plant = data.plants; // single object
+    const plant = data.plants; 
 
     document.getElementById("modalName").innerText = plant.name;
     document.getElementById("modalImg").src = plant.image;
